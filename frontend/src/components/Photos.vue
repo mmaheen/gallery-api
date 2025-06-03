@@ -14,7 +14,7 @@
         </figure>
         <div class="d-flex justify-content-between tm-text-gray">
           <span class="tm-text-gray-light">{{ formatDate(photo.created_at) }}</span>
-          <span>9,906 views</span>
+          <span>{{ photo.views }} views</span>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@ onMounted(async () => {
   try {
     const response = await axios.get('http://127.0.0.1:8000/api/photos')
     photos.value = response.data.slice(0, 16) // Get the first 16 photos
-    console.log('Fetched photos:', photos.value)
+    // console.log('Fetched photos:', photos.value)
   } catch (error) {
     console.error('Error fetching photos:', error)
   }

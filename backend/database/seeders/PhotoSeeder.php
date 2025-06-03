@@ -32,6 +32,8 @@ class PhotoSeeder extends Seeder
                 'description' => $faker->realText($maxNbChars = 200, $indexSize = 2),
                 'image' => $photo,
                 'category_id' => rand(1, 20), // Assuming you have 20 categories
+                'created_at' => $faker->dateTimeBetween('-1 year', 'now'),
+                'views' => rand(0, 1000000),
             ]);
         }
     }
