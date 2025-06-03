@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Models\Photo;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
-    public function test(){
-        return 'test';
+    public function photos(){
+        $photos = Photo::all();
+        return response()->json($photos);
     }
 }

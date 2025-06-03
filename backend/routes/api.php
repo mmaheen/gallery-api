@@ -8,5 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/test',[SiteController::class, 'test'])
-    ->name('api.test');
+Route::get('/photos', [SiteController::class, 'photos'])->name('api.photos');
