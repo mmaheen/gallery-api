@@ -13,7 +13,7 @@
           </figcaption>
         </figure>
         <div class="d-flex justify-content-between tm-text-gray">
-          <span class="tm-text-gray-light">18 Oct 2020</span>
+          <span class="tm-text-gray-light">{{ formatDate(photo.created_at) }}</span>
           <span>9,906 views</span>
         </div>
       </div>
@@ -49,4 +49,12 @@ onMounted(async () => {
     console.error('Error fetching photos:', error)
   }
 })
+
+const formatDate = (date) => {
+  return new Intl.DateTimeFormat('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  }).format(new Date(date))
+}
 </script>
